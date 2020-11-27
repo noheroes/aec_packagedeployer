@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<!-- Detalle: inicio -->
+<section class="seccion-detalle">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center  mb-2">
+                <img src="~/images/aprendo-en-casa.svg" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center titulo mb-4 mt-3">¡Bienvenido!</h2>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-5 text-center">
+                <p class="mb-4">Para copiar contenido del USB al servidor presione el boton descargar.</p>
+                <form method="post" asp-controller="Home" asp-action="Descargar">
+                    <button type="submit" class="btn btn-primary btn-aec btn-lg btn-block">Descargar</button>
+                </form>
+                <p class="mb-4"></p>
+                <p class="mb-4">Para copiar contenido del servidor al USB presione el boton cargar.</p>
+                <form method="post" asp-controller="Home" asp-action="Cargar">
+                    <button type="submit" class="btn btn-primary btn-aec btn-lg btn-block">Cargar</button>
+                </form>
+                <p class="mb-4"></p>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-12 text-center">
+                <h4>Mensajes :</h4><h3 class="font-weight-bold red-text">@ViewBag.Message</h3>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Detalle: inicio -->
+
+@*<div class="text-center">
+    <h5>@ViewBag.Message</h5>
+</div>
+
+<div class="text-center">
+    <form method="post" asp-action="Cargar" asp-controller="Home">
+        <input type="submit" value="Cargar datos" />
+    </form>
+
+</div>
+<div class="text-center">
+    <form method="post" asp-action="Descargar" asp-controller="Home">
+        <input type="submit" value="Descargar datos" />
+    </form>
+</div>*@
+

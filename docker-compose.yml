@@ -1,0 +1,29 @@
+version: "3.4"
+services:
+    aec_packageadmin:
+        image: "aec_packagedeployer"
+        build: .
+        container_name: "aec_packagedeployer"
+        hostname: "aec_packagedeployer"
+        environment:
+            "ASPNETCORE_ENVIRONMENT": Production
+            "Settings__RutaUSB": "/app/usb"
+            "Settings__RutaCarga": "/app/carga"
+            "Settings__PrefijoCarga": "aec"
+            "Settings__ExtensionCarga": ".json"
+            "Settings__RutaDescarga": "/app/descarga"
+            "Settings__PrefijoDescarga": "aec"
+            "Settings__ExtensionDescarga": ".tar"
+        networks:
+            - ms
+        ports:
+            - "8888:80"
+        volumes:
+            - ~/aprendoencasa/aec_packagedeployer/usb:/app/usb
+            - ~/aprendoencasa/aec_packagedeployer/carga:/app/carga
+            - ~/aprendoencasa/aec_packagedeployer/descarga:/app/descarga
+            - ~/aprendoencasa/aec_packagedeployer/log:/app/log
+        restart: unless-stopped
+networks:
+    ms:
+      external: true

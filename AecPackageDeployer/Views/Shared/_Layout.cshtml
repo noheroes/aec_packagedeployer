@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - aec_packagedeployer</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Cabecera: inicio -->
+    <section class="seccion-cabecera mb-4 pb-2 mt-2">
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-md-left col-12 text-center">
+                        <a asp-area="" asp-controller="Home" asp-action="Index" class="logo-minedu"><img src="~/images/minedu.svg" /></a>
+                    </div>
+                    <div class="col-md-6">
+
+                    </div>
+                </div>
+            </div>
+        </header>
+    </section>
+    <!-- Cabecera: fin -->
+    <!-- Tabs: inicio -->
+    @*<section class="seccion-tabs mb-5 mt-1">
+        <div class="container">
+
+            <nav class="nav nav-pills justify-content-center">
+                <a class="nav-item nav-link active" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+            </nav>
+        </div>
+    </section>*@
+    <!-- Tabs: inicio -->
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Pie: inicio -->
+    <section class="seccion-pie mt-auto">
+        <footer class=" mt-4  mb-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col  text-center">
+                        2020 © Todos los derechos reservados
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <!-- Pie: fin -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
